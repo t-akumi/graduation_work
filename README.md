@@ -80,3 +80,6 @@ gem: sorcery, kaminari, ajax, ransack　を導入
 
 ■ figma 画面遷移図URL
 　https://www.figma.com/design/0wWKZnLtbxEUYOAedcj1F1/Untitled?node-id=0-1&p=f&t=C8GWJNUTupOovBTi-0
+
+■ drawio ER図URL
+  https://drive.google.com/file/d/1UYIUN6d3XSJQmu5DaYSwU9IWPEfDkI9i/view?usp=sharing
