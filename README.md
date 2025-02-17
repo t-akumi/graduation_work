@@ -53,8 +53,10 @@
 MVPリリース時の機能
 ⭐️ユーザー登録、編集
 ⭐️ログイン、ログアウト
+　・パスワードリセット
 ⭐️在庫管理
 　・在庫の登録（名称、カテゴリ、購入スパン、メモ（保管している場所等を記録できる））
+　・在庫編集
 　・在庫状況を表示
 　・在庫数の処理（非同期）
 　・少ない在庫があればメッセージを送信
@@ -74,3 +76,7 @@ MVPリリース時の機能
 一般的なCRUD以外の実装予定の機能についてそれぞれどのようなイメージ(使用するAPIや)で実装する予定なのか現状考えているもので良いので教えて下さい。
 gem: sorcery, kaminari, ajax, ransack　を導入
 本リリース時に余裕があればLINEとXのAPIを使用。
+
+
+■ figma 画面遷移図URL
+　https://www.figma.com/design/0wWKZnLtbxEUYOAedcj1F1/Untitled?node-id=0-1&p=f&t=C8GWJNUTupOovBTi-0
