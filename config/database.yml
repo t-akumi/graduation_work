@@ -6,6 +6,10 @@ default: &default
   password: "password"
   host: db
 
+production:
+  <<: *default
+  database: sample_rails_development
+
 development:
   <<: *default
   database: sample_rails_development
