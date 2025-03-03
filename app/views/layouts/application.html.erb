@@ -21,11 +21,15 @@
   </head>
 
   <body>
+    <header>
+      <div class="title_logo bg-white text-dark pull-left">
+        <%= link_to "/" ,class: "btn btn-default" do %>
+          <div class="title">お気に入りが見つかる<br>日用品管理アプリ</div>
+        <% end %>
+      </div>
+    </header>
     <!-- main class="container mx-auto mt-28 px-5 flex" -->
       <%= yield %>
     <!-- /main-->
-    <footer class="d-flex align-items-center pt-4">
-      <p class="p-2">お気に入りが見つかる<br>日用品管理アプリ</p>
-    </footer>
   </body>
 </html>

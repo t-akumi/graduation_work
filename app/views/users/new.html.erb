@@ -1,0 +1,27 @@
+<div class="sign_up_container bg-white text-dark">
+  <div class="create_user mx-3 my-3">
+    <h3 class="mx-3 mt-4">ユーザー登録</h3>
+    <div class="sign_up_form">
+      <%= form_with model: @user do |f| %>
+        <div class="d-flex mb-5">
+          <%= f.label :ニックネーム, class: "label text-center" %>
+          <%= f.text_field :name, class: "form-control mr-5" %>
+        </div>  
+        <div class="d-flex">
+          <%= f.label :メールアドレス, class: "label text-center" %>
+          <%= f.email_field :email, class: "form-control mr-5" %>
+        </div>
+        <p class="mr-3">※残り１つになった在庫がある場合、このメールアドレスに自動通知されます</p>
+        <div class="d-flex mb-5">
+          <%= f.label :パスワード, class: "label text-center" %>
+          <%= f.text_field :password, class: "form-control mr-5" %>
+        </div>  
+        <div class="d-flex mb-5">
+          <%= f.label :パスワード確認, class: "label text-center" %>
+          <%= f.text_field :password_confirmation, class: "form-control mr-5" %>
+        </div>
+        <%= f.submit "登録する", class: "submit_button"%>
+      <% end %>
+    </div>
+  </div>
+</div>
