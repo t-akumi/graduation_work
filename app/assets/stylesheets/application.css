@@ -1,8 +1,21 @@
 
+header .title_logo{
+    width: 15%;
+    font-size: medium;
+    margin-top: 20px;
+    margin-left: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+header .title{
+    color: #000;
+}
+
 body {
     background-color: #FFC489;
 }
-
+/* トップページのCSS */
 .top_page_box,.rooting_button{
     background-color: #F3F3F3;
     border-radius: 10px;
@@ -20,14 +33,45 @@ body {
   border-bottom: 2px solid #b5b5ad;
 }
 
+/* ユーザー登録画面のCSS */
 
-
-footer{
-    position:absolute;
-    bottom: 0;
-    width: 100%;
-    height: 55px;
-    background-color: #D9D9D9;
-    display: flex;
-    align-items: center;
+.sign_up_container{
+    border-width: 4px;
+    border-color: #88B1FD;
+    width: 800px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
 }
+
+.create_user{
+    background-color: #F3F3F3;
+    border-color: #88B1FD;
+    border-width: 1px;
+    height: 560px;
+}
+
+.sign_up_form{
+    margin-top: 90px;
+}
+
+.sign_up_form p{
+    text-align: end;
+    font-size: 13px;
+}
+
+.label{
+    margin-left: 70px;
+    width:400px;
+}
+
+.submit_button{
+    background-color: #88b1fdbb;
+    padding: 15px 30px;
+    border-radius: 20px;
+    border-color: #88B1FD;
+    float: right;
+    margin-right: 10px;
+}
+

@@ -8,7 +8,11 @@ default: &default
 
 production:
   <<: *default
-  database: sample_rails_development
+  database: lk4r9wk7dp9wfdpk
+  username: xz303h2ekci165je
+  password: cuvne6id32wkv8ob
+  host: v02yrnuhptcod7dk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+  url: mysql2://xz303h2ekci165je:cuvne6id32wkv8ob@v02yrnuhptcod7dk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lk4r9wk7dp9wfdpk
 
 development:
   <<: *default
