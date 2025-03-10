@@ -1,15 +1,22 @@
 
 header .title_logo{
-    width: 15%;
     font-size: medium;
-    margin-top: 20px;
     margin-left: 40px;
     text-align: center;
     border-radius: 10px;
+    padding: 20px;
 }
 
 header .title{
     color: #000;
+}
+
+header .user_menu{
+    text-align: center;
+    width: auto;
+    float: right;
+    padding: 15px;
+    margin-right: 10px;
 }
 
 body {
@@ -35,7 +42,7 @@ body {
 
 /* ユーザー登録画面のCSS */
 
-.sign_up_container{
+.form_container{
     border-width: 4px;
     border-color: #88B1FD;
     width: 800px;
@@ -45,18 +52,18 @@ body {
     margin-top: 5%;
 }
 
-.create_user{
+.form_box{
     background-color: #F3F3F3;
     border-color: #88B1FD;
     border-width: 1px;
     height: 560px;
 }
 
-.sign_up_form{
+.form{
     margin-top: 90px;
 }
 
-.sign_up_form p{
+.form p{
     text-align: end;
     font-size: 13px;
 }
