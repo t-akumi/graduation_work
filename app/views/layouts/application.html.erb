@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Stock App" %></title>
+    <title><%= page_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta charset="utf-8">
@@ -21,12 +21,22 @@
   </head>
 
   <body>
-    <header>
-      <div class="title_logo bg-white text-dark pull-left">
+    <header class = "mt-2">
+      <div class="title_logo d-inline bg-white text-dark">
         <%= link_to "/" ,class: "btn btn-default" do %>
           <div class="title">お気に入りが見つかる<br>日用品管理アプリ</div>
         <% end %>
       </div>
+      <% if logged_in? %>
+        <div class="user_menu d-inline bg-white text-dark">
+          <%= current_user.name %>
+          <%= link_to 'ログアウト',logout_path, data: { turbo_method: :delete }  %>
+        </div>
+      <% else %>
+        <div class="user_menu d-inline bg-white text-dark">
+          <%= link_to 'ログイン',login_path%>
+        </div> 
+      <% end %>
     </header>
     <!-- main class="container mx-auto mt-28 px-5 flex" -->
       <%= yield %>
