@@ -30,6 +30,7 @@
       <% if logged_in? %>
         <div class="user_menu d-inline bg-white text-dark">
           <%= current_user.name %>
+          <%= link_to '在庫管理画面へ',stocks_path %>
           <%= link_to 'ログアウト',logout_path, data: { turbo_method: :delete }  %>
         </div>
       <% else %>

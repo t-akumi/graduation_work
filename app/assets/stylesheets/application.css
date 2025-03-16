@@ -82,3 +82,64 @@ body {
     margin-right: 10px;
 }
 
+/* ストック管理画面のCSS */
+
+.index_container{
+    border-width: 4px;
+    border-color: #88B1FD;
+    border-top: none;
+    width: 800px;
+    height: 580px;
+    margin-right: auto;
+    padding-top: 15px;
+}
+
+.index_box{
+    background-color: #F3F3F3;
+    border-color: #88B1FD;
+    border-width: 1px;
+    height: 540px;
+}
+
+.index_button{
+    text-align: center;
+    width: 33.3%;
+    background-color: #F3F3F3;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-color: #88B1FD;
+    border-width: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b-button :hover{
+    background-color: #ebebe1;
+}
+
+.topics{
+    background-image: url("https://i.gyazo.com/604cf6784a2e7573bb4658d6d96984fa.png") ;
+    background-size: contain;
+    width: 300px;
+    height: 600px;
+    background-repeat:  no-repeat;
+}
+
+.phone_display{
+    width: 265px;
+    height: 490px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.phone_display h5{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 30px;
+    
+    background-color: #FFC489;
+
+}
