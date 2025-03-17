@@ -92,6 +92,10 @@ body {
     margin-right: 10px;
 }
 
+.submit_button:hover{
+    background-color: #6da0ffbb;
+}
+
 /* ストック管理画面のCSS */
 
 .index_container{
@@ -132,6 +136,11 @@ body {
 .stocks{
     display: flex;
     align-items: center;
+}
+
+.stock_card{
+    text-decoration: none;
+    color: #000;
 }
 
 .stock_index{

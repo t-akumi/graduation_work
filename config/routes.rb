@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "entrance#index"
   resources :users
-  resources :stocks 
+  resources :stocks
+  get 'soon', to: 'stocks#soon'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'

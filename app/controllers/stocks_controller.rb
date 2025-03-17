@@ -18,8 +18,31 @@ class StocksController < ApplicationController
         end
     end
 
+    def show
+        @stock = current_user.stocks.find(params[:id])
+    end
+
     def edit
-        @stock = Stock.find(params[:id])
+        @stock = current_user.stocks.find(params[:id])
+    end
+
+    def update
+        @stock = current_user.stocks.find(params[:id])
+        if @stock.update(stock_params)
+            redirect_to stocks_path
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        @stock = current_user.stocks.find(params[:id])
+        @stock.destroy!
+        redirect_to stocks_path, success: "削除しました！", status: :see_other
+    end
+
+    def soon
+        @stocks = current_user.stocks.where("stock_quantity <= ?" , 1)
     end
 
     private

@@ -2,7 +2,7 @@
     <div>
         <%= render "shared/index_button" %>
         <div class="index_container bg-white text-dark">
-            <div class="text-center text-danger py-1">残りの数は設定した購入頻度によって自動的に減少します！</div>
+            <div class="text-center text-danger py-1">残りが１つ以下のストックを表示しています！</div>
             <div class="index_box mx-3 mb-3">
                 <div class="d-inline-block"><p class="ml-5 mt-3">ストック名（更新日）　　　　　　　　　　　　　　　　　残っている数</p></div>
                 <div class="d-inline-block ml-4">
@@ -25,14 +25,14 @@
                                 </div>
                             <% end %>
                             <div>
-                                <%= link_to edit_stock_path(stock), class: "edit_button" do%>
+                                <%= link_to edit_stock_path(stock.id), class: "edit_button" do%>
                                     <div class="edit_button text-body">編集</div>
                                 <% end %>
                             </div>
                         </div>
                     <% end %>
                 <% else %>
-                    <div class="mt-5 text-center">登録されたストックがありません</div>
+                    <div class="mt-5 text-center">ストックが１つ以下に該当するものはありません。</div>
                 <% end %>
             </div>
         </div>
