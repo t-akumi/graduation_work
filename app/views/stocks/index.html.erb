@@ -6,39 +6,43 @@
                     <div class="p-3 mr-2">現在のストック数</div>
                 <% end %>
                 <%= link_to "/", class: "index_button" do%>
-                    <div class="p-3 mr-2">現在のストック数</div>
+                    <div class="p-3 mr-2">そろそろ買い時かも！</div>
                 <% end %>
                 <%= link_to "/", class: "index_button" do%>
-                    <div class="p-3 mr-2">現在のストック数</div>
+                    <div class="p-3 mr-2">投稿をチェック！</div>
                 <% end %>
             </div>
         </div>
         <div class="index_container bg-white text-dark">
             <div class="text-center text-danger py-1">残りの数は設定した購入頻度によって自動的に減少します！</div>
             <div class="index_box mx-3 mb-3">
-                <div><p class="ml-5 mt-3">ストック名（更新日）　　　　　　　　　　　　　　　　　残っている数</p></div>
-                <div class="stocks">
-                    <div class="stock_index ml-5 ">
-                        <div class="stock_name d-inline ml-3">aaa</div>
-                        <div class="stock_amount d-inline">aaaa</div>
-                    </div>
-                    <div>
-                        <%= link_to "/", class: "edit_button" do%>
-                            <div class="edit_button">編集</div>
-                        <% end %>
-                    </div>
+                <div class="d-inline-block"><p class="ml-5 mt-3">ストック名（更新日）　　　　　　　　　　　　　　　　　残っている数</p></div>
+                <div class="d-inline-block ml-4">
+                    <%= link_to new_stock_path, class: "insert_button" do%>
+                        <div class="btn btn-info">ストックを追加</div>
+                    <% end %>
                 </div>
-                 <div class="stocks">
-                    <div class="stock_index ml-5 ">
-                        <div class="stock_name d-inline ml-3">aaa</div>
-                        <div class="stock_amount d-inline">aaaa</div>
-                    </div>
-                    <div>
-                        <%= link_to "/", class: "edit_button" do%>
-                            <div class="edit_button">編集</div>
-                        <% end %>
-                    </div>
-                </div>
+                <% if @stocks.present? %>  
+                    <% @stocks.each do |stock| %>
+                        <div class="stocks mb-2">
+                            <div class="stock_index ml-5 ">
+                                <div class="stock_name d-inline ml-3">
+                                    <%= stock.name %>
+                                </div>
+                                <div class="stock_amount d-inline">
+                                    <%= stock.stock_quantity %>
+                                </div>
+                            </div>
+                            <div>
+                                <%= link_to edit_stock_path(stock.id), class: "edit_button" do%>
+                                    <div class="edit_button">編集</div>
+                                <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                <% else %>
+                    <div>none</div>
+                <% end %>
             </div>
         </div>
     </div>

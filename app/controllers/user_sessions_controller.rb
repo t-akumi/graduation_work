@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
         @user = login(params[:email],params[:password])
 
         if @user
-            redirect_to root_path
+            redirect_to stocks_path
         else
             render :new
         end
@@ -16,5 +16,5 @@ class UserSessionsController < ApplicationController
         logout
         redirect_to root_path
     end
-    
+
 end
