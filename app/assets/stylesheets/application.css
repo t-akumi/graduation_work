@@ -82,3 +82,98 @@ body {
     margin-right: 10px;
 }
 
+/* ストック管理画面のCSS */
+
+.index_container{
+    border-width: 4px;
+    border-color: #88B1FD;
+    border-top: none;
+    width: 800px;
+    height: 580px;
+    margin-right: auto;
+}
+
+.index_box{
+    background-color: #F3F3F3;
+    border-color: #88B1FD;
+    border-width: 1px;
+    height: 530px;
+}
+
+.index_button{
+    text-align: center;
+    font-size: large;
+    width: 33.3%;
+    background-color: #F3F3F3;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-color: #88B1FD;
+    border-width: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.index_button.active{
+    background-color: rgb(254, 255, 255);
+    border-bottom: none;
+}
+
+.stocks{
+    display: flex;
+    align-items: center;
+}
+
+.stock_index{
+    background-color: #ffffff;
+    height: 45px;
+    width: 550px;
+    border-color: #88B1FD;
+    border-width: 1px;
+    font-size: larger;
+    padding-top: 5px;
+}
+
+.stock_amount{
+    float: right;
+    margin-right: 10%;
+}
+
+.edit_button{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    width: 60px;
+    background-color: #88B1FD;
+    text-align: center;
+    border-radius: 30px;
+    margin-left: 30px;
+}
+
+
+.topics{
+    background-image: url("https://i.gyazo.com/604cf6784a2e7573bb4658d6d96984fa.png") ;
+    background-size: contain;
+    width: 300px;
+    height: 600px;
+    margin-top: 50px;
+    background-repeat:  no-repeat;
+}
+
+.phone_display{
+    width: 265px;
+    height: 490px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.phone_display h5{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 30px;
+    
+    background-color: #FFC489;
+
+}

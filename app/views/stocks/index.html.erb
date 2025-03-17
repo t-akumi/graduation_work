@@ -1,0 +1,50 @@
+<div class="container d-flex mt-5">
+    <div>
+        <div class="buttons">
+            <div class="button_container d-flex">
+                <%= link_to stocks_path, class: "index_button #{"active" if current_page?(stocks_path)}" do%>
+                    <div class="p-3 mr-2">現在のストック数</div>
+                <% end %>
+                <%= link_to "/", class: "index_button" do%>
+                    <div class="p-3 mr-2">現在のストック数</div>
+                <% end %>
+                <%= link_to "/", class: "index_button" do%>
+                    <div class="p-3 mr-2">現在のストック数</div>
+                <% end %>
+            </div>
+        </div>
+        <div class="index_container bg-white text-dark">
+            <div class="text-center text-danger py-1">残りの数は設定した購入頻度によって自動的に減少します！</div>
+            <div class="index_box mx-3 mb-3">
+                <div><p class="ml-5 mt-3">ストック名（更新日）　　　　　　　　　　　　　　　　　残っている数</p></div>
+                <div class="stocks">
+                    <div class="stock_index ml-5 ">
+                        <div class="stock_name d-inline ml-3">aaa</div>
+                        <div class="stock_amount d-inline">aaaa</div>
+                    </div>
+                    <div>
+                        <%= link_to "/", class: "edit_button" do%>
+                            <div class="edit_button">編集</div>
+                        <% end %>
+                    </div>
+                </div>
+                 <div class="stocks">
+                    <div class="stock_index ml-5 ">
+                        <div class="stock_name d-inline ml-3">aaa</div>
+                        <div class="stock_amount d-inline">aaaa</div>
+                    </div>
+                    <div>
+                        <%= link_to "/", class: "edit_button" do%>
+                            <div class="edit_button">編集</div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="topics ml-3">
+        <div class="phone_display">
+            <h5 class="text-center">新着記事</h5>
+        </div>
+    </div>
+</div>
