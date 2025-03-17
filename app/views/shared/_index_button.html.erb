@@ -1,0 +1,13 @@
+<div class="buttons">
+    <div class="button_container d-flex">
+        <%= link_to stocks_path, class: "index_button #{"active" if current_page?(stocks_path)}" do%>
+            <div class="p-3 mr-2">現在のストック数</div>
+        <% end %>
+        <%= link_to soon_path, class: "index_button  #{"active" if current_page?(soon_path)}" do%>
+            <div class="p-3 mr-2">そろそろ買い時かも！</div>
+        <% end %>
+        <%= link_to "/", class: "index_button" do%>
+            <div class="p-3 mr-2">投稿をチェック！</div>
+        <% end %>
+    </div>
+</div>

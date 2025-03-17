@@ -57,6 +57,7 @@ body {
     border-color: #88B1FD;
     border-width: 1px;
     height: 560px;
+    overflow-y: scroll;
 }
 
 .form{
@@ -68,9 +69,18 @@ body {
     font-size: 13px;
 }
 
+.purchase_interval{
+    width:80%;
+}
+
+.d-flex > span{
+    white-space: nowrap;
+}
+
 .label{
-    margin-left: 70px;
+    margin-left: 40px;
     width:400px;
+    white-space: nowrap;
 }
 
 .submit_button{
@@ -80,6 +90,10 @@ body {
     border-color: #88B1FD;
     float: right;
     margin-right: 10px;
+}
+
+.submit_button:hover{
+    background-color: #6da0ffbb;
 }
 
 /* ストック管理画面のCSS */
@@ -98,6 +112,7 @@ body {
     border-color: #88B1FD;
     border-width: 1px;
     height: 530px;
+    overflow: scroll;
 }
 
 .index_button{
@@ -121,6 +136,11 @@ body {
 .stocks{
     display: flex;
     align-items: center;
+}
+
+.stock_card{
+    text-decoration: none;
+    color: #000;
 }
 
 .stock_index{
