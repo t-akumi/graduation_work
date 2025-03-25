@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_17_055045) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_20_074431) do
   create_table "stocks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.integer "purchase_interval"
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_17_055045) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.datetime "quantity_update_at"
     t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 

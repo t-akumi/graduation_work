@@ -22,6 +22,8 @@ gem "tailwindcss-rails"
 # gem "redis", ">= 4.0.1"
 gem 'sorcery','0.16.3'
 
+gem 'whenever', require: false
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

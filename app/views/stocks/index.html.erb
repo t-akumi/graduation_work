@@ -4,7 +4,7 @@
         <div class="index_container bg-white text-dark">
             <div class="text-center text-danger py-1">残りの数は設定した購入頻度によって自動的に減少します！</div>
             <div class="index_box mx-3 mb-3">
-                <div class="d-inline-block"><p class="ml-5 mt-3">ストック名（更新日）　　　　　　　　　　　　　　　　　残っている数</p></div>
+                <div class="d-inline-block"><p class="ml-5 mt-3">ストック名（在庫数自動更新日）　　　　　　　　　　　　残っている数</p></div>
                 <div class="d-inline-block ml-4">
                     <%= link_to new_stock_path, class: "insert_button" do%>
                         <div class="btn btn-info">ストックを追加</div>
@@ -17,7 +17,7 @@
                                 <div class="stock_index ml-5 ">
                                     <div class="stock_name d-inline ml-3">
                                         <%= stock.name %>
-                                        <span>（<%= stock.updated_at.strftime('%Y/%m/%d') %>）</span>
+                                        <span>（<%= stock.quantity_update_at.strftime('%Y/%m/%d')  %>）</span>
                                     </div>
                                     <div class="stock_amount d-inline">
                                         <%= stock.stock_quantity %>
