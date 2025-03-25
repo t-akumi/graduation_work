@@ -12,9 +12,12 @@ FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 WORKDIR /rails
 
 # Install base packages
-RUN apt-get update -qq && \
+RUN apt-get update -qq && apt-get install -y cron &&\
+    touch /var/run/crond.pid &&\
+    chmod 666 /var/run/crond.pid &&\
     apt-get install --no-install-recommends -y curl default-mysql-client libjemalloc2 libvips && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
 
 # Set production environment
 ENV RAILS_ENV="development" \

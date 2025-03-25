@@ -11,6 +11,7 @@ class StocksController < ApplicationController
     def create
         @stock = Stock.new(stock_params)
         @stock.user_id = current_user.id
+        @stock.quantity_update_at = Time.current
         if @stock.save
             redirect_to stocks_path
         else
@@ -29,6 +30,7 @@ class StocksController < ApplicationController
     def update
         @stock = current_user.stocks.find(params[:id])
         if @stock.update(stock_params)
+            #ストック数が減少したら、quantity_update_atを変更する仕様にしているため、ここで在庫減少日を更新する必要はない。
             redirect_to stocks_path
         else
             render :edit
