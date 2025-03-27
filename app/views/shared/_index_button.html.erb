@@ -6,7 +6,7 @@
         <%= link_to soon_path, class: "index_button  #{"active" if current_page?(soon_path)}" do%>
             <div class="p-3 mr-2">そろそろ買い時かも！</div>
         <% end %>
-        <%= link_to "/", class: "index_button" do%>
+        <%= link_to articles_path, class: "index_button #{"active" if current_page?(articles_path)}" do%>
             <div class="p-3 mr-2">投稿をチェック！</div>
         <% end %>
     </div>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root "entrance#index"
   resources :users
   resources :stocks
+  resources :articles
   get 'soon', to: 'stocks#soon'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
