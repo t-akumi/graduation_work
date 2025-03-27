@@ -169,6 +169,52 @@ body {
     margin-left: 30px;
 }
 
+/* 記事一覧画面のCSS */
+
+.article_container{
+    width: 100%;
+    height: 510px;
+    margin-top: 2vh;
+    overflow-y: scroll;
+}
+
+.article{
+    display: flex;
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #F3F3F3;
+}
+
+.left_contents{
+    width: 55%;
+    height: auto;
+}
+
+.article_header p{
+    font-size: xx-small;
+    margin-left: 5%;
+}
+
+.right_contents{
+    width: 45%;
+    text-align: center;
+    height: auto;
+}
+
+.img{
+    width: 95%;
+    height: 220px;
+    background-color: #ffffff;
+    border-color: #000;
+    border-width: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .topics{
     background-image: url("https://i.gyazo.com/604cf6784a2e7573bb4658d6d96984fa.png") ;
@@ -197,3 +243,35 @@ body {
     background-color: #FFC489;
 
 }
+
+.article_container_phone{
+    width: 100%;
+    height: 400px;
+    margin-top: 2vh;
+    overflow-y: scroll;
+}
+
+.article_phone{
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #F3F3F3;
+}
+
+
+
+.article_phone p{
+    font-size: xx-small;
+    margin-left: 5%;
+}
+
+.article_text_phone{
+    font-size: 10px;
+}
+
+/* 記事作成画面のCSS */
+
