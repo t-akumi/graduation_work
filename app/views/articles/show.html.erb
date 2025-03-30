@@ -1,7 +1,28 @@
-<%= content_for(:title,'ストック情報ページ') %>
+<%= content_for(:title,'記事詳細ページ') %>
 <div class="form_container bg-white text-dark">
-  <div class="form_box mx-3 my-3">
-    <h3 class="mx-3 mt-4 d-inline-block">ストック情報</h3>
-    
-  </div>
+    <div class="article mt-2">
+        <div class="left_contents">
+            <h5>投稿ユーザー名：　<%= @article.user.name %></h5>
+            <div class="article_header">
+                <p class="mt-1">カテゴリー：　<%= @article.categories.first.name %></p>
+                <p>キーワード：　<%= @article.keyword %></p>
+            </div>
+            
+            <p class="mt-3 ml-3"><%= safe_join(@article.body.split("\n"),tag(:br)) %></p>
+        </div>
+        <div class="right_contents">
+            <p>投稿日:　<%= @article.created_at.strftime('%Y/%m/%d')  %></p>
+            <div class="img pt-5">image</div>
+            <% if current_user && current_user.id == @article.user_id %>
+                <div class="d-flex mt-3 ml-5">
+                    <%= link_to edit_article_path(@article.id), class: "insert_button" do%>
+                        <div class="btn btn-info  ml-5">編集する</div>
+                    <% end %>
+                    <%= link_to article_path(@article.id), class: "insert_button", data: { turbo_confirm: "本当に削除しますか？", turbo_method: :delete} do%>
+                        <div class="btn btn-danger  ml-3">削除する</div>
+                    <% end %>                            
+                </div>
+            <% end %>
+        </div>
+    </div>
 </div>

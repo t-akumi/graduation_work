@@ -50,6 +50,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
+    overflow: scroll;
 }
 
 .form_box{
@@ -236,8 +237,8 @@ body {
 }
 
 .article_header p{
-    font-size: xx-small;
-    margin-left: 5%;
+    font-size: small;
+    margin-left:  1%;
 }
 
 .right_contents{
@@ -271,6 +272,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
+    padding-top: 15%;
 }
 
 .phone_display h5{
@@ -300,6 +302,13 @@ body {
     padding: 2%;
     border-radius: 10px;
     background-color: #F3F3F3;
+    color: #000;
+    text-decoration: none;
+}
+
+.article_phone:hover{
+    text-decoration: none;
+    background-color: #cbcbc1;
 }
 
 
