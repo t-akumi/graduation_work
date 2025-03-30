@@ -8,8 +8,15 @@
           <%= f.label :ストック名, class: "label text-center" %>
           <%= f.text_field :name, class: "form-control mr-5 text-center" %>
         </div>  
+
+        <%= f.fields_for :stock_categories do |stock_category| %>
+          <div class="category_form">
+            <%= stock_category.label :カテゴリー, class: "category_label" %>
+            <%= stock_category.collection_select :category_id, Category.all, :id, :name,{}, { class: "category_name_input" } %>
+          </div> 
+        <% end %>
         
-        <div class="d-flex mb-3 mr-5">
+        <div class="d-flex my-3 mr-5">
           <%= f.label :購入頻度, class: "label text-center" %>
           <%= f.text_field :purchase_interval, class: "form-control purchase_interval text-right" %>
           <span class="mr-5 mt-1">日毎に購入</span>
