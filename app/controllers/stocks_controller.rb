@@ -6,12 +6,15 @@ class StocksController < ApplicationController
 
     def new
         @stock = Stock.new
+        @stock.stock_categories.build
     end
 
     def create
         @stock = Stock.new(stock_params)
         @stock.user_id = current_user.id
         @stock.quantity_update_at = Time.current
+        
+
         if @stock.save
             redirect_to stocks_path
         else
@@ -20,7 +23,8 @@ class StocksController < ApplicationController
     end
 
     def show
-        @stock = current_user.stocks.find(params[:id])
+        @stock = current_user.stocks.includes(:categories).find(params[:id])
+        @category = @stock.categories.first.name
     end
 
     def edit
@@ -29,11 +33,15 @@ class StocksController < ApplicationController
 
     def update
         @stock = current_user.stocks.find(params[:id])
-        if @stock.update(stock_params)
-            #ストック数が減少したら、quantity_update_atを変更する仕様にしているため、ここで在庫減少日を更新する必要はない。
-            redirect_to stocks_path
-        else
-            render :edit
+
+        ActiveRecord::Base.transaction do
+            @stock.stock_categories.destroy_all
+            if @stock.update(stock_params)
+                #ストック数が減少したら、quantity_update_atを変更する仕様にしているため、ここで在庫減少日を更新する必要はない。
+                redirect_to stocks_path
+            else
+                render :edit
+            end
         end
     end
 
@@ -50,9 +58,10 @@ class StocksController < ApplicationController
     private
 
     def stock_params
-        params.require(:stock).permit(:name,:purchase_interval,:stock_quantity,:memo).tap do |whitelisted|
+        params.require(:stock).permit(:name,:purchase_interval,:stock_quantity,:memo, stock_categories_attributes: [:category_id]).tap do |whitelisted|
             whitelisted[:purchase_interval] = params[:stock][:purchase_interval].tr('０-９', '0-9') if params[:stock][:purchase_interval]
             whitelisted[:stock_quantity] = params[:stock][:stock_quantity].tr('０-９', '0-9') if params[:stock][:stock_quantity]
         end
     end
+
 end

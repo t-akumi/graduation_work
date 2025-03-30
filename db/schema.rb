@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_25_055916) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_27_090031) do
+  create_table "article_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "article_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id", "category_id"], name: "index_article_categories_on_article_id_and_category_id"
+    t.index ["article_id"], name: "index_article_categories_on_article_id"
+    t.index ["category_id"], name: "index_article_categories_on_category_id"
+  end
+
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "keyword", null: false
     t.string "body", null: false
@@ -18,6 +28,22 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_25_055916) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stock_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "stock_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_stock_categories_on_category_id"
+    t.index ["stock_id", "category_id"], name: "index_stock_categories_on_stock_id_and_category_id"
+    t.index ["stock_id"], name: "index_stock_categories_on_stock_id"
   end
 
   create_table "stocks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -43,6 +69,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_25_055916) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "article_categories", "articles"
+  add_foreign_key "article_categories", "categories"
   add_foreign_key "articles", "users"
+  add_foreign_key "stock_categories", "categories"
+  add_foreign_key "stock_categories", "stocks"
   add_foreign_key "stocks", "users"
 end

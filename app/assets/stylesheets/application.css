@@ -61,12 +61,52 @@ body {
 }
 
 .form{
-    margin-top: 90px;
+    margin-top: 50px;
 }
 
 .form p{
     text-align: end;
     font-size: 13px;
+}
+
+.category_select{
+    background-color: #ffffff;
+}
+
+.category_form{
+    display: flex;
+    
+}
+
+.category_label{
+    text-align: end;
+    width: 28%;
+    margin-right: 9%;
+}
+
+.category_name{
+    text-align: center;
+    width: 57%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    background-color: #e9ecef;
+    margin-right: 7%;
+    
+}
+
+.category_name_input{
+    text-align: center;
+    width: 57%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    background-color: #ffffff;
+    margin-right: 13%; 
 }
 
 .purchase_interval{
