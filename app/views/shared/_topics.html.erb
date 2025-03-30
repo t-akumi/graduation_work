@@ -2,16 +2,15 @@
     <div class="phone_display">
         <h5 class="text-center">新着記事</h5>
         <div class="article_container_phone">
-            <div class="article_phone">
-                <p class="mt-1">カテゴリー：</p>
-                <p>キーワード：　いいいいいいいいいいいいいいいいいい</p>
-                <p class="article_text_phone mt-3 ml-3">いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい</p>
-            </div>
-            <div class="article_phone">
-                <p class="mt-1">カテゴリー：</p>
-                <p>キーワード：　いいいいいいいいいいいいいいいいいい</p>
-                <p class="article_text_phone mt-3 ml-3">いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい</p>
-            </div>
+            <% @phone_articles.each do |art| %>
+                <%= link_to article_path(art) do%>
+                    <div class="article_phone">
+                        <p class="mt-1">カテゴリー：　<%= art.categories.first.name %></p>
+                        <p>キーワード：　<%= art.keyword %></p>
+                        <p class="article_text_phone mt-3 ml-3"><%=safe_join(art.body.split("\n"),tag(:br)) %></p>
+                    </div>
+                <% end %>
+            <% end %>
         </div>
     </div>
 </div>

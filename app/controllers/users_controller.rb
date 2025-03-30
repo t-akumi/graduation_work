@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     private
 
     def not_authenticated
-        redirect_to root_path
+        redirect_to login_path
     end
 
     def user_params

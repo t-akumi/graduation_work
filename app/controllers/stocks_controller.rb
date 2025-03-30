@@ -2,6 +2,7 @@ class StocksController < ApplicationController
     before_action :require_login
     def index
         @stocks = Stock.where(user_id: current_user.id)
+        @phone_articles = Article.all.order(created_at: :desc).limit(3)
     end
 
     def new
@@ -53,6 +54,7 @@ class StocksController < ApplicationController
 
     def soon
         @stocks = current_user.stocks.where("stock_quantity <= ?" , 1)
+        @phone_articles = Article.all.order(created_at: :desc).limit(3)
     end
 
     private
@@ -62,6 +64,10 @@ class StocksController < ApplicationController
             whitelisted[:purchase_interval] = params[:stock][:purchase_interval].tr('０-９', '0-9') if params[:stock][:purchase_interval]
             whitelisted[:stock_quantity] = params[:stock][:stock_quantity].tr('０-９', '0-9') if params[:stock][:stock_quantity]
         end
+    end
+
+    def not_authenticated
+        redirect_to login_path
     end
 
 end
