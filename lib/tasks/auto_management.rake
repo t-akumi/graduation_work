@@ -19,7 +19,7 @@ namespace :auto_management do
     end
 
     task send_stock_letter: :environment do
-        StockMailer.send_stock_letter.deliver_now
+        StockMailer.test.deliver_now
     end
 
 end
