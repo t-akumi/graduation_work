@@ -8,10 +8,18 @@ namespace :auto_management do
             if stock.purchase_interval != nil
                 if passed_days >= stock.purchase_interval
                     stock.stock_quantity -= 1
+                    if stock.stock_quantity == 1
+                        StockMailer.send_stock_letter(stock.id).deliver_now
+                    end
                     stock.quantity_update_at = Time.current
                     stock.save
                 end
             end
         end
     end
+
+    task send_stock_letter: :environment do
+        StockMailer.test.deliver_now
+    end
+
 end
