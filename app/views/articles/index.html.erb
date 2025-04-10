@@ -2,19 +2,28 @@
     <div>
         <%= render "shared/index_button" %>
         <div class="index_container bg-white text-dark">
-            <% if logged_in? %>
-                <div>
-                    <%= link_to new_article_path, class: "insert_button" do%>
-                            <div class="btn btn-info mt-2 ml-3">投稿する</div>
+            <div class="d-flex">
+                <% if logged_in? %>
+                    <div>
+                        <%= link_to new_article_path, class: "insert_button" do%>
+                                <div class="btn btn-info mt-2 ml-3">投稿する</div>
+                        <% end %>
+                    </div>
+                <% else %>
+                    <div>
+                        <%= link_to login_path, class: "insert_button" do%>
+                                <div class="btn btn-info mt-2 ml-3">ログインして投稿する</div>
+                        <% end %>
+                    </div>
+                <% end %>
+                <div class="search">
+                    <p class ="pt-1 pr-2">カテゴリー検索</p>
+                    <%= search_form_for @q, url: articles_path, html: { class: "d-flex" } do |f| %>
+                     <%= f.collection_select :categories_name_cont, @categories, :name, :name, { include_blank: "全てのカテゴリー" }, { class: 'form-control mr-2' } %>
+                     <%= f.submit '検索', class: 'btn btn-primary ml-1' %>
                     <% end %>
                 </div>
-            <% else %>
-                <div>
-                    <%= link_to login_path, class: "insert_button" do%>
-                            <div class="btn btn-info mt-2 ml-3">ログインして投稿する</div>
-                    <% end %>
-                </div>
-            <% end %>
+            </div>
             <div class="article_container">
                 <% if @articles.present? %>
                     <% @articles.each do |article| %>
