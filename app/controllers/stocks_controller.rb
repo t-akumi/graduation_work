@@ -1,7 +1,9 @@
 class StocksController < ApplicationController
     before_action :require_login
     def index
-        @stocks = Stock.where(user_id: current_user.id)
+        @categories = Category.all
+        @q = Stock.ransack(params[:q])
+        @stocks = @q.result(distinct: true).where(user_id: current_user.id)
         @phone_articles = Article.all.order(created_at: :desc).limit(3)
     end
 
@@ -53,7 +55,9 @@ class StocksController < ApplicationController
     end
 
     def soon
-        @stocks = current_user.stocks.where("stock_quantity <= ?" , 1)
+        @categories = Category.all
+        @q = Stock.ransack(params[:q])
+        @stocks = @q.result(distinct: true).where(user_id: current_user.id).where("stock_quantity <= ?" , 1)
         @phone_articles = Article.all.order(created_at: :desc).limit(3)
     end
 

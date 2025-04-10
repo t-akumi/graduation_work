@@ -139,6 +139,16 @@ body {
 
 /* ストック管理画面のCSS */
 
+.search{
+    display: flex;
+    width: 60%;
+    height: 37px;
+    margin-left: auto;
+    margin-right: 30px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
 .index_container{
     border-width: 4px;
     border-color: #88B1FD;
@@ -194,6 +204,10 @@ body {
     padding-top: 5px;
 }
 
+.stock_index:hover{
+    background-color: #cff4df;
+}
+
 .stock_amount{
     float: right;
     margin-right: 10%;
@@ -214,7 +228,7 @@ body {
 
 .article_container{
     width: 100%;
-    height: 510px;
+    height: 507px;
     margin-top: 2vh;
     overflow-y: scroll;
 }

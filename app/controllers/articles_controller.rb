@@ -3,7 +3,9 @@ class ArticlesController < ApplicationController
     skip_before_action :require_login, only: %i[index show]
     
     def index
-        @articles = Article.all.order(created_at: :desc)
+        @categories = Category.all
+        @q = Article.ransack(params[:q])
+        @articles = @q.result(distinct: true).all.order(created_at: :desc)
         @phone_articles = Article.all.order(created_at: :desc).limit(3)
     end
 
