@@ -17,11 +17,16 @@ class StocksController < ApplicationController
         @stock.user_id = current_user.id
         @stock.quantity_update_at = Time.current
         
-
         if @stock.save
             redirect_to stocks_path
         else
-            render :new
+            respond_to do |format|
+                format.turbo_stream do
+                    render turbo_stream: turbo_stream.update('flash') {
+                    render_to_string inline: "<div id='flash' class='text-danger text-center'>入力内容に不備があります</div>"
+                    }
+                end
+            end
         end
     end
 
@@ -43,7 +48,13 @@ class StocksController < ApplicationController
                 #ストック数が減少したら、quantity_update_atを変更する仕様にしているため、ここで在庫減少日を更新する必要はない。
                 redirect_to stocks_path
             else
-                render :edit
+                respond_to do |format|
+                    format.turbo_stream do
+                        render turbo_stream: turbo_stream.update('flash') {
+                        render_to_string inline: "<div id='flash' class='text-danger text-center'>入力内容に不備があります</div>"
+                        }
+                    end
+                end
             end
         end
     end

@@ -27,25 +27,31 @@
     </div>
     <h5 class="comment_title">comments</h5>
     <div class="comments_container">
-        <div class="comment">
-            <%= form_with model: @comment, url: article_comments_path(@article) do |f| %>
-                <div class="d-flex comment_area">
-                    <%= f.text_area :body, class: "form-control", placeholder: 'コメントを入力してください' %>
-                    <%= f.submit "コメントする", class: "comment_submit_button"%>
-                </div>
-            <% end %>
-        </div>
-        <% @comments.each do |comment| %>
+        <% if current_user %>
             <div class="comment">
-                <%= safe_join(comment.body.split("\n"),tag(:br)) %>
+                <%= form_with model: @comment, url: article_comments_path(@article) do |f| %>
+                    <div class="d-flex comment_area">
+                        <%= f.text_area :body, class: "form-control", placeholder: 'コメントを入力してください' %>
+                        <%= f.submit "コメントする", class: "comment_submit_button"%>
+                    </div>
+                <% end %>
             </div>
-            <% if current_user.own?(comment) %>
-                <div class="comment_button mt-1">
-                    <%= link_to comment_path(comment.id), class: "insert_button", data: { turbo_confirm: "本当に削除しますか？", turbo_method: :delete} do%>
-                        <div class="comment_destroy_button  ml-3">削除する</div>
-                    <% end %>                            
+        <% end %>
+        <% if @comments.present? %>
+            <% @comments.each do |comment| %>
+                <div class="comment">
+                    <%= safe_join(comment.body.split("\n"),tag(:br)) %>
                 </div>
+                <% if current_user && current_user.own?(comment) %>
+                    <div class="comment_button mt-1">
+                        <%= link_to comment_path(comment.id), class: "insert_button", data: { turbo_confirm: "本当に削除しますか？", turbo_method: :delete} do%>
+                            <div class="comment_destroy_button  ml-3">削除する</div>
+                        <% end %>                            
+                    </div>
+                <% end %>
             <% end %>
+        <% else %>
+            <div class="text-center">まだコメントがありません</div>
         <% end %>
     </div>
 </div>

@@ -3,15 +3,7 @@
   <div class="form_box mx-3 my-3">
     <h3 class="mx-3 mt-4">投稿記事の作成</h3>
     <div class="form">
-      <% if @article.errors.any? %>
-        <div id="error_explanation" class="alert alert-danger">
-            <ul>
-                <% @article.errors.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-            </ul>
-        </div>
-      <% end %>
+      <div id="flash"></div>
       <%= form_with model: @article do |f| %>
         <%= f.fields_for :article_categories do |article_category| %>
           <div class="category_form">
@@ -22,12 +14,12 @@
         
         <div class="d-flex my-3 mr-5">
           <%= f.label :キーワード, class: "label text-center" %>
-          <%= f.text_field :keyword, class: "form-control mr-5", placeholder: "洗剤　部屋干し"  %>
+          <%= f.text_field :keyword, class: "form-control mr-5", placeholder: "洗剤　部屋干し（必須）"  %>
         </div>
 
         <div class="d-flex mb-3 mr-5">
           <%= f.label :本文, class: "label text-center" %>
-          <%= f.text_area :body, class: "form-control article_body_form mr-5", placeholder: "120文字まで入力できます", rows: 8 %>
+          <%= f.text_area :body, class: "form-control article_body_form mr-5", placeholder: "120文字まで入力できます（必須）", rows: 8 %>
         </div>
 
         <%= f.submit "保存して投稿する", class: "submit_button"%>

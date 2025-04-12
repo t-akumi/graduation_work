@@ -12,8 +12,13 @@ class UsersController < ApplicationController
             auto_login(@user)
             redirect_to root_path
         else
-            flash.now[:alert] = "登録に失敗しました"
-            render :new
+            respond_to do |format|
+                format.turbo_stream do
+                    render turbo_stream: turbo_stream.update('flash') {
+                    render_to_string inline: "<div id='flash' class='text-danger text-center'>入力内容に不備があります</div>"
+                    }
+                end
+            end
         end
     end
 
