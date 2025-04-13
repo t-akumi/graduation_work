@@ -5,7 +5,14 @@
             <% @phone_articles.each do |art| %>
                 <%= link_to article_path(art) do%>
                     <div class="article_phone">
-                        <p class="mt-1">カテゴリー：　<%= art.categories.first.name %></p>
+                        <p class="mt-1">
+                            カテゴリー：
+                            <% if art.categories.first %>
+                                <%= art.categories.first.name %>
+                            <% else %>
+                                カテゴリーがありません
+                            <% end %>
+                        </p>
                         <p>キーワード：　<%= art.keyword %></p>
                         <p class="article_text_phone mt-3 ml-3"><%=safe_join(art.body.split("\n"),tag(:br)) %></p>
                     </div>

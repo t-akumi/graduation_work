@@ -1,8 +1,9 @@
 <%= content_for(:title,'投稿記事作成ページ') %>
 <div class="form_container bg-white text-dark">
   <div class="form_box mx-3 my-3">
-    <h3 class="mx-3 mt-4">投稿記事の作成</h3>
+    <h3 class="mx-3 mt-4">投稿記事の編集</h3>
     <div class="form">
+      <div id="flash"></div>
       <% if @article.errors.any? %>
         <div id="error_explanation" class="alert alert-danger">
             <ul>

@@ -5,5 +5,5 @@ class Article < ApplicationRecord
     accepts_nested_attributes_for :article_categories
     has_many :categories, through: :article_categories
     validates :keyword, presence: true, length: {maximum: 18}
-    validates :body, length: {maximum: 120}
+    validates :body, length: {maximum: 120}, presence: true
 end

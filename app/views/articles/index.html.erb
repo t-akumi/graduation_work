@@ -40,7 +40,7 @@
                             </div>
                             <div class="right_contents">
                                 <p>投稿日:　<%= article.created_at.strftime('%Y/%m/%d')  %></p>
-                                <div class="img pt-5">image</div>
+                                <div class="img pt-5">image<br>画像投稿機能 検討中</div>
                                 <% if current_user && article.user_id == current_user.id %>
                                     <div class="d-flex mt-3 ml-5">
                                         <%= link_to edit_article_path(article.id), class: "insert_button" do%>
