@@ -263,12 +263,21 @@ body {
 
 .img{
     width: 95%;
-    height: 220px;
+    height: 224px;
     background-color: #ffffff;
     border-color: #000;
     border-width: 2px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.photo{
+    width: 290px;
+    height: 220px;
+}
+
+.photo_now{
+    margin-left: 50%;
 }
 
 .topics{

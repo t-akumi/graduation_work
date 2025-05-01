@@ -12,7 +12,9 @@
         </div>
         <div class="right_contents">
             <p>投稿日:　<%= @article.created_at.strftime('%Y/%m/%d')  %></p>
-            <div class="img pt-5">image</div>
+            <div class="img">
+                <%= image_tag @article.photo_url, class: 'photo' %>
+            </div>
             <% if current_user && current_user.id == @article.user_id %>
                 <div class="d-flex mt-3 ml-5">
                     <%= link_to edit_article_path(@article.id), class: "insert_button" do%>

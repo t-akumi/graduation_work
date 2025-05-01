@@ -22,6 +22,17 @@
           <%= f.text_area :body, class: "form-control article_body_form mr-5", placeholder: "120文字まで入力できます（必須）", rows: 8 %>
         </div>
 
+        <div class="d-flex mb-3 mr-5">
+          <%= f.label :画像, class: "label text-center"  %>
+          <%= f.file_field :photo, class: "form-control mr-5", accept: 'image/*' %>
+          <%= f.hidden_field :photo_cache %>
+          <% if @article.photo.present? %>
+           <p>yes</p>
+          <% else %>
+           <p>no</p>
+          <% end %>
+        </div>
+
         <%= f.submit "保存して投稿する", class: "submit_button"%>
       <% end %>
     </div>
