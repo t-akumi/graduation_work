@@ -6,4 +6,6 @@ class Article < ApplicationRecord
     has_many :categories, through: :article_categories
     validates :keyword, presence: true, length: {maximum: 18}
     validates :body, length: {maximum: 120}, presence: true
+
+    mount_uploader :photo, PhotoUploader
 end
