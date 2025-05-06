@@ -13,7 +13,7 @@
         <div class="right_contents">
             <p>投稿日:　<%= @article.created_at.strftime('%Y/%m/%d')  %></p>
             <div class="img">
-                <%= image_tag @article.photo_url, class: 'photo' %>
+                <%= image_tag @article.photo_url(:art_img)%>
             </div>
             <% if current_user && current_user.id == @article.user_id %>
                 <div class="d-flex mt-3 ml-5">
