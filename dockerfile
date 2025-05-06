@@ -12,7 +12,7 @@ FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 WORKDIR /rails
 
 # Install base packages
-RUN apt-get update -qq && apt-get install -y cron &&\
+RUN apt-get update -qq && apt-get install -y cron && apt-get install -y imagemagick && \
     touch /var/run/crond.pid &&\
     chmod 666 /var/run/crond.pid &&\
     apt-get install --no-install-recommends -y curl default-mysql-client libjemalloc2 libvips && \

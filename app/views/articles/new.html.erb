@@ -26,11 +26,6 @@
           <%= f.label :画像, class: "label text-center"  %>
           <%= f.file_field :photo, class: "form-control mr-5", accept: 'image/*' %>
           <%= f.hidden_field :photo_cache %>
-          <% if @article.photo.present? %>
-           <p>yes</p>
-          <% else %>
-           <p>no</p>
-          <% end %>
         </div>
 
         <%= f.submit "保存して投稿する", class: "submit_button"%>

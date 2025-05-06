@@ -1,7 +1,7 @@
 class PhotoUploader < CarrierWave::Uploader::Base
   # Include RMagick, MiniMagick, or Vips support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
   # include CarrierWave::Vips
 
   # Choose what kind of storage to use for this uploader:
@@ -20,6 +20,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   def extension_allowlist
     %w(jpg jpeg gif png)
+  end
+
+  version :art_img do
+    process resize_to_fill: [290,220]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
