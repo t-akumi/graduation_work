@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, shallow: true
   end
+  resources :likes
   get 'soon', to: 'stocks#soon'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
