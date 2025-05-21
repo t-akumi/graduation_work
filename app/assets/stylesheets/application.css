@@ -261,6 +261,22 @@ body {
     height: auto;
 }
 
+.good_icon{
+    font-size: 28px;
+}
+
+.good_button{
+    font-size: 28px;
+}
+
+.good_button:hover{
+    color: #88B1FD;
+}
+
+.already_good{
+    font-size: 28px;
+}
+
 .img{
     width: 95%;
     height: 222px;
