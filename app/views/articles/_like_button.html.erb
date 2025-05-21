@@ -1,0 +1,16 @@
+<%= turbo_frame_tag dom_id(article, :like_button), class: "mt-2" do %>
+    <% if logged_in? %>
+        <% if current_user.like_arts.include?(article) %>
+            <%= link_to like_path(id: article.id), class: "mt-3", data: { turbo_method: :delete } do %>
+                <i class="bi bi-hand-thumbs-up-fill mt-3 already_good"></i>
+            <% end %>
+        <% else %>
+            <%= link_to likes_path(id: article.id), class: "mt-3", data: { turbo_method: :post } do %>
+                <i class="bi bi-hand-thumbs-up mt-3 good_button"></i>
+            <% end %>
+        <% end %>
+    <% else %>
+        <i class="bi bi-hand-thumbs-up good_icon mt-3"></i>
+    <% end %>
+    <span class="mt-4">いいね:<%= article.likes.count %></span>
+<% end %>
