@@ -15,5 +15,7 @@
         <%= f.submit "ログイン", class: "submit_button"%>
       <% end %>
     </div>
+    <%= link_to "LINEでログイン", login_line_path(provider: "line"), class: "btn btn-success" %>
+
   </div>
 </div>

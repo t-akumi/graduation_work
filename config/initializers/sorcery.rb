@@ -4,10 +4,27 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules = [:external]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
+
+
+
+  config.external_providers = %i[line]
+  config.line.key = ENV['LINE_CHANNEL_ID']
+  config.line.secret = ENV['LINE_CHANNEL_SECRET']
+  config.line.callback_url = "https://75a6-183-176-137-3.ngrok-free.app/oauth/callback?provider=line" # ngrokのURLを使用
+  config.line.user_info_path = 'https://api.line.me/v2/profile'
+  config.line.scope = 'profile openid email'
+  config.line.user_info_mapping = {
+    name: 'displayName',
+    email: 'email' # 取得できないこともある
+  }
+
+  config.user_config do |user|
+    user.authentications_class = Authentication
+  end
   # -- core --
   # What controller action to call for non-authenticated users. You can also
   # override the 'not_authenticated' method of course.

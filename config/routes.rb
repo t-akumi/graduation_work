@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
+  get "/oauth/callback", to: "oauths#callback"
+  get "/oauth/:provider", to: "oauths#oauth", as: :login_line
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
