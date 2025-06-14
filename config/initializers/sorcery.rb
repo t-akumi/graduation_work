@@ -19,7 +19,7 @@ Rails.application.config.sorcery.configure do |config|
   config.line.scope = 'profile openid email'
   config.line.user_info_mapping = {
     name: 'displayName',
-    email: 'email' # 取得できないこともある
+    email: 'email' # 取得できないこともあるみたい
   }
 
   config.user_config do |user|

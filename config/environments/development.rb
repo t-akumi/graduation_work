@@ -81,7 +81,7 @@ Rails.application.configure do
 
   # ngrok
   Rails.application.routes.default_url_options[:host] = ENV['NGROK_URL']
-  
 
+  
 
 end
