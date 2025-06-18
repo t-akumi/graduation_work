@@ -14,17 +14,14 @@ Rails.application.config.sorcery.configure do |config|
   config.external_providers = %i[line]
   config.line.key = ENV['LINE_CHANNEL_ID']
   config.line.secret = ENV['LINE_CHANNEL_SECRET']
-  config.line.callback_url = "https://75a6-183-176-137-3.ngrok-free.app/oauth/callback?provider=line" # ngrokのURLを使用
-  config.line.user_info_path = 'https://api.line.me/v2/profile'
-  config.line.scope = 'profile openid email'
+  config.line.callback_url = "http://localhost:3000/oauth/callback?provider=line" # ngrokのURLを使用
+  config.line.scope = 'profile'
+  config.line.bot_prompt = "aggressive"
   config.line.user_info_mapping = {
     name: 'displayName',
-    email: 'email' # 取得できないこともあるみたい
+    email: 'userId' # 取得できないこともあるみたい
   }
 
-  config.user_config do |user|
-    user.authentications_class = Authentication
-  end
   # -- core --
   # What controller action to call for non-authenticated users. You can also
   # override the 'not_authenticated' method of course.
@@ -561,6 +558,7 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `nil`
     #
     # user.authentications_class =
+    user.authentications_class = Authentication
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`

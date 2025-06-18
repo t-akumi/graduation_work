@@ -137,6 +137,16 @@ body {
     background-color: #6da0ffbb;
 }
 
+.external_login_button{
+    width: 550px;
+}
+
+.line_button{
+    float: right;
+    margin-top: 17px;
+    padding: 10px;
+}
+
 /* ストック管理画面のCSS */
 
 .search{

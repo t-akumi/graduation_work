@@ -1,7 +1,12 @@
 <%= content_for(:title,'新規ユーザー作成ページ') %>
 <div class="form_container bg-white text-dark">
   <div class="form_box mx-3 my-3">
-    <h3 class="mx-3 mt-4">ユーザー登録</h3>
+    <div class="d-flex">
+      <h3 class="mx-3 mt-4">ユーザー登録</h3>
+      <div class="external_login_button">
+        <%= link_to "LINEでログイン", login_line_path(provider: "line"), class: "line_button btn btn-success" %>
+      </div>
+    </div>
     <div class="form">
       <div id="flash"></div>
       <%= form_with model: @user do |f| %>
