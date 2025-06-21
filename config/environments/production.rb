@@ -107,4 +107,6 @@ Rails.application.configure do
     :password => 'zgnmhzzcqyixsmel'
   }
 
+  config.hosts << "daily-necessities-management-2c375efffbca.herokuapp.com"
+
 end
