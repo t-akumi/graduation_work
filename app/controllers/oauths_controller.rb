@@ -7,14 +7,14 @@ class OauthsController < ApplicationController
       provider = auth_params[:provider]
 
       if (@user = login_from(provider))
-        redirect_to stocks_path
+        redirect_to stocks_path, allow_other_host: true
       else
         begin
             @user = create_from(provider)
             auto_login(@user)
             redirect_to stocks_path #新規登録&ログインして飛ぶとこ
         rescue StandardError
-          redirect_to root_path
+          redirect_to root_path, allow_other_host: true
         end
       end
     end 
