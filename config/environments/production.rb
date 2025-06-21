@@ -107,4 +107,9 @@ Rails.application.configure do
     :password => 'zgnmhzzcqyixsmel'
   }
 
+    # LINE login
+  config.action_controller.raise_on_open_redirects = false
+  config.action_controller.raise_on_missing_callback_actions = true
+  config.hosts << "daily-necessities-management-2c375efffbca.herokuapp.com"
+
 end

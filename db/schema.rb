@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_05_17_162439) do
+ActiveRecord::Schema[7.2].define(version: 2025_06_07_130112) do
   create_table "article_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "article_id"
     t.bigint "category_id"
@@ -29,6 +29,15 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_17_162439) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "authentications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.string "provider"
+    t.string "uid"
+    t.index ["user_id"], name: "index_authentications_on_user_id"
   end
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -93,6 +102,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_17_162439) do
   add_foreign_key "article_categories", "articles"
   add_foreign_key "article_categories", "categories"
   add_foreign_key "articles", "users"
+  add_foreign_key "authentications", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "articles"

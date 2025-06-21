@@ -1,7 +1,12 @@
 <%= content_for(:title,'ログインページ') %>
 <div class="form_container bg-white text-dark">
   <div class="form_box mx-3 my-3">
-    <h3 class="mx-3 mt-4">ログイン画面</h3>
+    <div class="d-flex">
+      <h3 class="mx-3 mt-4">ログイン画面</h3>
+      <div class="external_login_button">
+        <%= link_to "LINEでログイン", login_line_path(provider: "line"), class: "line_button btn btn-success" %>
+      </div>
+    </div>
     <div class="form">
       <%= form_with url: login_path do |f| %>
         <div class="d-flex mr-5">
@@ -15,5 +20,7 @@
         <%= f.submit "ログイン", class: "submit_button"%>
       <% end %>
     </div>
+    
+
   </div>
 </div>
