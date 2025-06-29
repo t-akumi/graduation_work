@@ -40,6 +40,8 @@ gem 'omniauth-auth0'
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
 
+gem 'line-bot-api', require: 'line/bot'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
