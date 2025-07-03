@@ -43,6 +43,9 @@ gem 'omniauth-rails_csrf_protection'
 gem 'rspec-rails', '~> 6.1.0'
 gem 'factory_bot_rails'
 gem 'faker'
+gem 'capybara'
+gem 'selenium-webdriver'
+gem "webdrivers"
 
 gem 'line-bot-api', require: 'line/bot'
 
