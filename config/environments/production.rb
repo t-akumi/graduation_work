@@ -103,7 +103,7 @@ Rails.application.configure do
     :port => '587',
     :domain => 'smtp.gmail.com',
     :authentication => 'plain',
-    :user_name => 'dailynecessityapp@gmail.com',
+    :user_name => 'stockandpost@gmail.com',
     :password => 'zgnmhzzcqyixsmel'
   }
 
