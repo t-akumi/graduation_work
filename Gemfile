@@ -49,6 +49,8 @@ gem "webdrivers"
 
 gem 'line-bot-api', require: 'line/bot'
 
+gem "meta-tags"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
