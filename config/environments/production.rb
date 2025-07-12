@@ -111,5 +111,5 @@ Rails.application.configure do
   config.action_controller.raise_on_open_redirects = false
   config.action_controller.raise_on_missing_callback_actions = true
   config.hosts << "daily-necessities-management-2c375efffbca.herokuapp.com"
-
+  config.hosts << "www.stockandpost.com"
 end
