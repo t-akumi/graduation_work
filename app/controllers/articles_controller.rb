@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
             og: {
               title: 'お気に入りが見つかる日用品管理アプリ',
               description: @article.body || @article.body.truncate(50),
-              image: @article.photo.present? ? @article.photo_url(:art_img) : image_url('app_face.png'),
+              image: @article.photo.present? ? @article.photo_url(:art_img) : view_context.image_url('app_face.png'),
               url: "https://www.stockandpost.com"
             }
         })
