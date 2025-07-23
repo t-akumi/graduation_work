@@ -19,7 +19,7 @@
         
         <div class="d-flex my-3 mr-5">
           <%= f.label :購入頻度, class: "label text-center" %>
-          <%= f.text_field :purchase_interval, class: "form-control purchase_interval text-right" %>
+          <%= f.number_field :purchase_interval, class: "form-control purchase_interval text-right", min: "1" %>
           <span class="mr-5 mt-1">日毎に購入</span>
         </div>  
         <div>
@@ -28,7 +28,7 @@
 
         <div class="d-flex mb-3 mr-5">
           <%= f.label :ストック数, class: "label text-center mr-4" %>
-          <%= f.text_field :stock_quantity, class: "form-control purchase_interval text-right" %>
+          <%= f.number_field :stock_quantity, class: "form-control purchase_interval text-right", min: "1" %>
           <span class="mr-5 mt-1">（個/袋/枚/本）</span>
         </div>
 

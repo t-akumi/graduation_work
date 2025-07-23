@@ -35,10 +35,6 @@
           <%= link_to '在庫管理画面へ',stocks_path %>
           <%= link_to 'ログアウト',logout_path, data: { turbo_method: :delete }  %>
         </div>
-      <% else %>
-        <div class="user_menu d-inline bg-white text-dark">
-          <%= link_to 'ログイン',login_path%>
-        </div> 
       <% end %>
     </header>
     <!-- main class="container mx-auto mt-28 px-5 flex" -->
