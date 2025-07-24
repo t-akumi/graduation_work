@@ -7,8 +7,23 @@ header .title_logo{
     padding: 20px;
 }
 
+@media (max-width: 600px) {
+    header .title_logo{
+        font-size: 5px;
+        margin-left: 5px;
+        border-radius: 10px;
+        padding: 13px;
+    }
+}
+
 header .title{
     color: #000;
+}
+
+@media (max-width: 600px) {
+    header .title{
+        font-size: x-small;
+    }
 }
 
 header .user_menu{
@@ -19,17 +34,64 @@ header .user_menu{
     margin-right: 10px;
 }
 
+@media (max-width: 600px) {
+    header .user_menu{
+        padding: 5px;
+        margin-right: 1%;
+        font-size: small;
+        margin-top: 5px;
+    }
+}
+
 body {
     background-color: #FFC489;
 }
 /* トップページのCSS */
-.top_page_box,.rooting_button{
+.top_page_box{
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #F3F3F3;
     border-radius: 10px;
     color: black;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+@media (max-width: 600px) {
+    .top_page_box{
+        width: 100%;
+        font-size: small;
+    }
+
+
+}
+
+.entrance_buttons{
+    justify-content: center;
+    display: flex;
+}
+
+@media (max-width: 600px){
+    .entrance_buttons{
+        display: contents;
+    }
+
+    .responsive_buttons_entrance{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .responsive_entrance{
+        width: 100%;
+    }
 }
 
 .rooting_button{
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    color: black;
     border-bottom: 5px solid #b5b5ad;
 }
 
