@@ -60,7 +60,7 @@ body {
 
 @media (max-width: 600px) {
     .top_page_box{
-        width: 100%;
+        width: 95%;
         font-size: small;
     }
 
@@ -428,6 +428,10 @@ body {
         font-size: 0.9rem;
         border-bottom: none;
         border-radius: 0px;
+    }
+
+    .index_button.active{
+        background-color: #f7cfd3;
     }
 
     .index_container{

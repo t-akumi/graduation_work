@@ -1,27 +1,31 @@
-<div class="container d-flex mt-5">
+<div class="container mt-5">
     <div>
         <%= render "shared/index_button" %>
         <div class="index_container bg-white text-dark">
             <div class="text-center text-danger py-1">残りが１つ以下のストックを表示しています！</div>
             <div class="index_box mx-3 mb-3">
                 <div class="search">
-                    <p class ="pt-1 pr-2">カテゴリー検索</p>
-                    <%= search_form_for @q, url: soon_path, html: { class: "d-flex" } do |f| %>
-                     <%= f.collection_select :categories_name_cont, @categories, :name, :name, { include_blank: "全てのカテゴリー" }, { class: 'form-control mr-2' } %>
-                     <%= f.submit '検索', class: 'btn btn-primary ml-1' %>
-                    <% end %>
+                    <div class="category_search">
+                        <p class ="pr-2">カテゴリー検索</p>
+                        <%= search_form_for @q, url: soon_path, html: { class: "d-flex" } do |f| %>
+                        <%= f.collection_select :categories_name_cont, @categories, :name, :name, { include_blank: "全てのカテゴリー" }, { class: 'form-control mr-2' } %>
+                        <%= f.submit '検索', class: 'category_search_btn btn btn-primary ml-1' %>
+                        <% end %>
+                    </div>
+                    <div class="AddStockBtn">
+                        <%= link_to new_stock_path, class: "insert_button" do%>
+                            <div class="btn btn-info">ストックを追加</div>
+                        <% end %>
+                    </div>
                 </div>
-                <div class="d-inline-block"><p class="ml-5 mt-3">ストック名（在庫数自動更新日）　　　　　　　　　　　　残っている数</p></div>
-                <div class="d-inline-block ml-4">
-                    <%= link_to new_stock_path, class: "insert_button" do%>
-                        <div class="btn btn-info">ストックを追加</div>
-                    <% end %>
-                </div>
+
+                <div class="introduce"><p class="mt-3">ストック名（在庫数自動更新日）と残っている数</p></div>
+
                 <% if @stocks.present? %>  
                     <% @stocks.each do |stock| %>
                         <div class="stocks">
                             <%= link_to stock_path(stock.id), class: "stock_card" do %>
-                                <div class="stock_index ml-5 ">
+                                <div class="stock_index">
                                     <div class="stock_name d-inline ml-3">
                                         <%= stock.name %>
                                         <span>（<%= stock.quantity_update_at.strftime('%Y/%m/%d')  %>）</span>
