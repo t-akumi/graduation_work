@@ -107,7 +107,7 @@ body {
 .form_container{
     border-width: 4px;
     border-color: #88B1FD;
-    width: 45%;
+    width: 80%;
     height: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -246,6 +246,7 @@ body {
         text-align: left;
         margin-left: 5%;
         margin-top: 5%;
+        width: auto;
     }
 
     .input_form{
@@ -259,11 +260,19 @@ body {
     .line_button{
         padding: 10%;
     }
+
+    .title_user_login{
+        font-size: 1.3rem;
+    }
     
 }
 
 
-
+@media (min-width: 1000px){
+    .form_container{
+        width: 50%;
+    }
+}
 
 
 
@@ -280,9 +289,15 @@ body {
     }
 }
 
+
+
+
+
+
 .search{
+    justify-content: center;
     display: flex;
-    width: 60%;
+    width: 100%;
     height: 37px;
     margin-left: auto;
     margin-right: 30px;
@@ -290,20 +305,42 @@ body {
     margin-bottom: 5px;
 }
 
+.search p{
+    margin-top: 0.5rem;
+}
+
+.category_search{
+    display: flex;
+}
+
+.AddStockBtn{
+    margin-left: 7%;
+}
+
+.container{
+    display: flex;
+    width: fit-content;
+}
+
+.button_container{
+    display: flex;
+}
+
+
 .index_container{
     border-width: 4px;
     border-color: #88B1FD;
     border-top: none;
-    width: 800px;
-    height: 580px;
+    width: 100%;
     margin-right: auto;
+    height: 80%;
 }
 
 .index_box{
     background-color: #F3F3F3;
     border-color: #88B1FD;
     border-width: 1px;
-    height: 530px;
+    height: 90%;
     overflow: scroll;
 }
 
@@ -325,9 +362,14 @@ body {
     border-bottom: none;
 }
 
+.introduce p{
+    text-align: center;
+}
+
 .stocks{
     display: flex;
     align-items: center;
+    margin: 0 10px;
 }
 
 .stock_card{
@@ -343,6 +385,7 @@ body {
     border-width: 1px;
     font-size: larger;
     padding-top: 5px;
+    margin-left: 1%;
 }
 
 .stock_index:hover{
@@ -364,6 +407,100 @@ body {
     border-radius: 30px;
     margin-left: 30px;
 }
+
+
+@media(max-width: 600px){
+    .container{
+        width: 100%;
+        display: block;
+    }
+
+    .button_container{
+        display: grid;
+    }
+
+    .buttons{
+        width: 100%;
+    }
+
+    .index_button{
+        width: 100%;
+        font-size: 0.9rem;
+        border-bottom: none;
+        border-radius: 0px;
+    }
+
+    .index_container{
+        width: 100%;
+        height: 550px;
+        font-size: 0.7rem;
+    }
+
+    .introduce p{
+        font-size: 0.7rem;
+        margin-left: 9px;
+    }
+
+    .search{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.7rem;
+        width: 95%;
+        margin-bottom: 10%;
+        display: contents;
+    }
+
+    .search p{
+        padding-top: 0.3rem;
+    }
+
+    .category_search{
+        justify-content: center;
+        margin-top: 2%;
+    }
+
+    .category_search_btn{
+        height: fit-content;
+    }
+
+    .insert_button{
+        display: grid;
+        margin-left: 0px;
+        margin-right: 7%;
+    }
+
+    .form-control{
+        font-size: 0.5rem;
+    }
+
+    .stock_index{
+        margin-top: 5%;
+        font-size: 1.0rem;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .edit_button{
+        display: none;
+    }
+
+    .stocks{
+        display: contents;
+    }
+
+    .stock_index{
+        font-size: 0.9rem;
+        padding-top: 8px;
+    }
+
+}
+
+
+
+
+
+
 
 /* 記事一覧画面のCSS */
 
