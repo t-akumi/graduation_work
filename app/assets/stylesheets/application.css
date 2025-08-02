@@ -140,6 +140,11 @@ body {
     display: flex;
 }
 
+.confirm_label{
+    width: 40%;
+    text-align: center;
+}
+
 .category_select{
     background-color: #ffffff;
 }
@@ -150,9 +155,8 @@ body {
 }
 
 .category_label{
-    text-align: end;
-    width: 28%;
-    margin-right: 9%;
+    text-align: center;
+    width: 40%;
 }
 
 .category_name{
@@ -170,7 +174,7 @@ body {
 
 .category_name_input{
     text-align: center;
-    width: 57%;
+    width: 100%;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -180,8 +184,26 @@ body {
     margin-right: 13%; 
 }
 
+.purchase_interval_input{
+    width: 100%;
+    display: flex;
+}
+
 .purchase_interval{
-    width:80%;
+    width:60%;
+}
+
+.forms p{
+    margin-right: 5%;
+}
+
+.quantity_input{
+    width: 100%;
+    display: flex;
+}
+
+.quantity{
+    width: 60%;
 }
 
 .d-flex > span{
@@ -498,6 +520,24 @@ body {
         padding-top: 8px;
     }
 
+    .category_form{
+        display: contents;
+    }
+
+    .purchase_interval{
+        width: 40%;
+    }
+
+    .quantity{
+        width: 30%;
+    }
+
+    .forms p{
+        font-size: 0.7rem;
+    }
+
+
+
 }
 
 
@@ -561,7 +601,7 @@ body {
 
 .img{
     width: 95%;
-    height: 222px;
+    height: 170px;
     background-color: #ffffff;
     border-color: #000;
     border-width: 2px;
