@@ -184,6 +184,18 @@ body {
     margin-right: 13%; 
 }
 
+.category_name_input_show{
+    text-align: center;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    background-color: #e9ecef;
+    margin-right: 13%; 
+}
+
 .purchase_interval_input{
     width: 100%;
     display: flex;
@@ -485,6 +497,10 @@ body {
         margin-top: 2%;
     }
 
+    .category_search select{
+        font-size: 0.5rem;
+    }
+
     .category_search_btn{
         height: fit-content;
     }
@@ -496,7 +512,7 @@ body {
     }
 
     .form-control{
-        font-size: 0.5rem;
+        font-size: 1.0rem;
     }
 
     .stock_index{
