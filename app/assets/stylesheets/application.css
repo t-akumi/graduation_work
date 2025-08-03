@@ -121,6 +121,7 @@ body {
     border-width: 1px;
     height: 560px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .title_and_button{
@@ -552,8 +553,6 @@ body {
         font-size: 0.7rem;
     }
 
-
-
 }
 
 
@@ -874,6 +873,18 @@ body {
     .comment{
         font-size: 0.7rem;
         width: 90%;
+    }
+
+    .art_show_edit_delete_button{
+        display: flex;
+    }
+
+    .art_edit_button{
+        font-size: 0.8rem;
+    }
+
+    .art_delete_button{
+        font-size: 0.8rem;
     }
 
 
