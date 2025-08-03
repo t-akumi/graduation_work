@@ -7,8 +7,23 @@ header .title_logo{
     padding: 20px;
 }
 
+@media (max-width: 600px) {
+    header .title_logo{
+        font-size: 5px;
+        margin-left: 5px;
+        border-radius: 10px;
+        padding: 13px;
+    }
+}
+
 header .title{
     color: #000;
+}
+
+@media (max-width: 600px) {
+    header .title{
+        font-size: x-small;
+    }
 }
 
 header .user_menu{
@@ -19,17 +34,64 @@ header .user_menu{
     margin-right: 10px;
 }
 
+@media (max-width: 600px) {
+    header .user_menu{
+        padding: 5px;
+        margin-right: 1%;
+        font-size: small;
+        margin-top: 5px;
+    }
+}
+
 body {
     background-color: #FFC489;
 }
 /* トップページのCSS */
-.top_page_box,.rooting_button{
+.top_page_box{
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #F3F3F3;
     border-radius: 10px;
     color: black;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+@media (max-width: 600px) {
+    .top_page_box{
+        width: 95%;
+        font-size: small;
+    }
+
+
+}
+
+.entrance_buttons{
+    justify-content: center;
+    display: flex;
+}
+
+@media (max-width: 600px){
+    .entrance_buttons{
+        display: contents;
+    }
+
+    .responsive_buttons_entrance{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .responsive_entrance{
+        width: 100%;
+    }
 }
 
 .rooting_button{
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    color: black;
     border-bottom: 5px solid #b5b5ad;
 }
 
@@ -45,8 +107,8 @@ body {
 .form_container{
     border-width: 4px;
     border-color: #88B1FD;
-    width: 800px;
-    height: 600px;
+    width: 80%;
+    height: 50%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
@@ -59,15 +121,29 @@ body {
     border-width: 1px;
     height: 560px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-.form{
+.title_and_button{
+    display: flex;
+}
+
+.forms{
     margin-top: 50px;
 }
 
-.form p{
+.forms p{
     text-align: end;
     font-size: 13px;
+}
+
+.input_form{
+    display: flex;
+}
+
+.confirm_label{
+    width: 40%;
+    text-align: center;
 }
 
 .category_select{
@@ -80,9 +156,8 @@ body {
 }
 
 .category_label{
-    text-align: end;
-    width: 28%;
-    margin-right: 9%;
+    text-align: center;
+    width: 40%;
 }
 
 .category_name{
@@ -100,7 +175,7 @@ body {
 
 .category_name_input{
     text-align: center;
-    width: 57%;
+    width: 100%;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -110,8 +185,38 @@ body {
     margin-right: 13%; 
 }
 
+.category_name_input_show{
+    text-align: center;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    background-color: #e9ecef;
+    margin-right: 13%; 
+}
+
+.purchase_interval_input{
+    width: 100%;
+    display: flex;
+}
+
 .purchase_interval{
-    width:80%;
+    width:60%;
+}
+
+.forms p{
+    margin-right: 5%;
+}
+
+.quantity_input{
+    width: 100%;
+    display: flex;
+}
+
+.quantity{
+    width: 60%;
 }
 
 .d-flex > span{
@@ -122,6 +227,7 @@ body {
     margin-left: 40px;
     width:400px;
     white-space: nowrap;
+    text-align: center;
 }
 
 .submit_button{
@@ -138,7 +244,9 @@ body {
 }
 
 .external_login_button{
-    width: 550px;
+    width: 20%;
+    margin-left: auto;
+    margin-right: 5%;
 }
 
 .line_button{
@@ -147,11 +255,84 @@ body {
     padding: 10px;
 }
 
+/* ユーザー登録画面のレスポンシブデザイン（フォームの共通部分あり） */
+@media (max-width: 600px){
+    .form_container{
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .title_user_create{
+        font-size: 1.3rem;
+    }
+
+    .forms{
+        width: 90%;
+        margin: auto;
+        margin-top: 3%;
+    }
+
+    .forms p{
+        text-align: start;
+        font-size: 0.7rem;
+    }
+
+    .label{
+        text-align: left;
+        margin-left: 5%;
+        margin-top: 5%;
+        width: auto;
+    }
+
+    .input_form{
+        display: contents;
+    }
+
+    .submit_button{
+        margin-top: 5%;
+    }
+
+    .line_button{
+        padding: 10%;
+    }
+
+    .title_user_login{
+        font-size: 1.3rem;
+    }
+    
+}
+
+
+@media (min-width: 1000px){
+    .form_container{
+        width: 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
 /* ストック管理画面のCSS */
+@media(max-width: 1000px){
+    .topics{
+        display: none;
+    }
+}
+
+
+
+
+
 
 .search{
+    justify-content: center;
     display: flex;
-    width: 60%;
+    width: 100%;
     height: 37px;
     margin-left: auto;
     margin-right: 30px;
@@ -159,20 +340,42 @@ body {
     margin-bottom: 5px;
 }
 
+.search p{
+    margin-top: 0.5rem;
+}
+
+.category_search{
+    display: flex;
+}
+
+.AddStockBtn{
+    margin-left: 7%;
+}
+
+.container{
+    display: flex;
+    width: fit-content;
+}
+
+.button_container{
+    display: flex;
+}
+
+
 .index_container{
     border-width: 4px;
     border-color: #88B1FD;
     border-top: none;
-    width: 800px;
-    height: 580px;
+    width: 100%;
     margin-right: auto;
+    height: 580px;
 }
 
 .index_box{
     background-color: #F3F3F3;
     border-color: #88B1FD;
     border-width: 1px;
-    height: 530px;
+    height: 92%;
     overflow: scroll;
 }
 
@@ -194,9 +397,14 @@ body {
     border-bottom: none;
 }
 
+.introduce p{
+    text-align: center;
+}
+
 .stocks{
     display: flex;
     align-items: center;
+    margin: 0 10px;
 }
 
 .stock_card{
@@ -212,6 +420,7 @@ body {
     border-width: 1px;
     font-size: larger;
     padding-top: 5px;
+    margin-left: 1%;
 }
 
 .stock_index:hover{
@@ -234,11 +443,141 @@ body {
     margin-left: 30px;
 }
 
+
+@media(max-width: 600px){
+    .container{
+        width: 100%;
+        display: block;
+    }
+
+    .button_container{
+        display: grid;
+    }
+
+    .buttons{
+        width: 100%;
+    }
+
+    .index_button{
+        width: 100%;
+        font-size: 0.9rem;
+        border-bottom: none;
+        border-radius: 0px;
+    }
+
+    .index_button.active{
+        background-color: #f7cfd3;
+    }
+
+    .index_container{
+        width: 100%;
+        height: 550px;
+        font-size: 0.7rem;
+    }
+
+    .introduce p{
+        font-size: 0.7rem;
+        margin-left: 9px;
+    }
+
+    .search{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.7rem;
+        width: 95%;
+        margin-bottom: 10%;
+        display: contents;
+    }
+
+    .search p{
+        padding-top: 0.3rem;
+    }
+
+    .category_search{
+        justify-content: center;
+        margin-top: 2%;
+    }
+
+    .category_search select{
+        font-size: 0.5rem;
+    }
+
+    .category_search_btn{
+        height: fit-content;
+    }
+
+    .insert_button{
+        display: grid;
+        margin-left: 0px;
+        margin-right: 7%;
+    }
+
+    .form-control{
+        font-size: 1.0rem;
+    }
+
+    .stock_index{
+        margin-top: 5%;
+        font-size: 1.0rem;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .edit_button{
+        display: none;
+    }
+
+    .stocks{
+        display: contents;
+    }
+
+    .stock_index{
+        font-size: 0.9rem;
+        padding-top: 8px;
+    }
+
+    .category_form{
+        display: contents;
+    }
+
+    .purchase_interval{
+        width: 40%;
+    }
+
+    .quantity{
+        width: 30%;
+    }
+
+    .forms p{
+        font-size: 0.7rem;
+    }
+
+}
+
+
+
+
+
+
+
 /* 記事一覧画面のCSS */
+
+.article_search{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 45px;
+    padding-top: 8px;
+}
+
+.container_left_side{
+    width: 700px;
+}
 
 .article_container{
     width: 100%;
-    height: 507px;
+    height: 87%;
     margin-top: 2vh;
     overflow-y: scroll;
 }
@@ -287,9 +626,13 @@ body {
     font-size: 28px;
 }
 
+.like_and_edit_buttons{
+    justify-content: center;
+}
+
 .img{
-    width: 95%;
-    height: 222px;
+    width: fit-content;
+    display: block;
     background-color: #ffffff;
     border-color: #000;
     border-width: 2px;
@@ -370,6 +713,62 @@ body {
 .article_text_phone{
     font-size: 10px;
 }
+
+/* 記事投稿画面 */
+.art_confirm{
+    display: flex;
+}
+
+@media(max-width: 600px){
+
+    .art_confirm{
+        display: contents;
+    }
+
+
+    .create_art_button{
+        padding-top: 5px;
+    }
+
+    .article_search{
+        display: contents;
+    }
+
+    .article_container{
+        height: 78%;
+    }
+
+    .container_left_side{
+        width: auto;
+    }
+
+    .article{
+        font-size: 0.7rem;
+    }
+
+    .left_contents h5{
+        font-size: 0.7rem;
+    }
+
+    .left_contents p{
+        font-size: 0.6rem;
+    }
+
+    .art_edit_delete_button{
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
 
 /* 記事詳細（コメント欄）画面のCSS */
 
@@ -455,5 +854,39 @@ body {
     width: 10px;
     margin-left: auto;
     margin-right: 20%;
+}
+
+@media(max-width: 600px){
+    .article_show_container{
+        width: fit-content;
+    }
+
+    .comment_title{
+        font-size: 0.8rem;
+        margin-left: 5%;
+    }
+
+    .comment_area textarea{
+        font-size: 0.7rem;
+    }
+
+    .comment{
+        font-size: 0.7rem;
+        width: 90%;
+    }
+
+    .art_show_edit_delete_button{
+        display: flex;
+    }
+
+    .art_edit_button{
+        font-size: 0.8rem;
+    }
+
+    .art_delete_button{
+        font-size: 0.8rem;
+    }
+
+
 }
 

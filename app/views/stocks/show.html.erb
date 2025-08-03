@@ -2,37 +2,41 @@
 <div class="form_container bg-white text-dark">
   <div class="form_box mx-3 my-3">
     <h3 class="mx-3 mt-4 d-inline-block">ストック情報</h3>
-    <div class="form">
+    <div class="forms">
       <%= form_with model: @stock do |f| %>
-        <div class="d-flex mb-3 mr-5">
-          <%= f.label :ストック名, class: "label text-center" %>
+        <div class="input_form mb-3">
+          <%= f.label :ストック名, class: "confirm_label" %>
           <%= f.text_field :name, readonly: true, class: "form-control mr-5 text-center" %>
         </div> 
 
-        <div class="category_form mb-3 mr-5">
+        <div class="category_form">
           <div class="category_label">カテゴリー</div>
-          <div class="category_name">
-            <%= @category %>
+          <div class="category_name_input_show mr-5">
+            <%= @category%>
           </div>
         </div> 
         
-        <div class="d-flex mb-3 mr-5">
-          <%= f.label :購入頻度, class: "label text-center" %>
-          <%= f.text_field :purchase_interval, readonly: true, class: "form-control purchase_interval text-right" %>
-          <span class="mr-5 mt-1">日毎に購入</span>
+        <div class="d-flex my-3 mr-5">
+          <%= f.label :購入頻度, class: "confirm_label mt-1" %>
+          <div class="purchase_interval_input">
+            <%= f.text_field :purchase_interval, readonly: true, class: "form-control purchase_interval text-right" %>
+            <span class="mt-1">日毎に購入</span>
+          </div>
         </div>  
         <div>
-            <p class="lh-1 mr-5 mb-5">※普段の購入頻度（設定された頻度で在庫が自動で減少します）<br>※ストックが無くなっても通知する必要がない場合は空欄でOKです</p>
+            <p class="lh-1 mb-3">※普段の購入頻度（設定された頻度で在庫が自動で減少します）<br>※ストックが無くなっても通知する必要がない場合は空欄でOKです</p>
         </div>
 
         <div class="d-flex mb-3 mr-5">
-          <%= f.label :ストック数, class: "label text-center mr-4" %>
-          <%= f.text_field :stock_quantity, readonly: true, class: "form-control purchase_interval text-right" %>
-          <span class="mr-5 mt-1">（個/袋/枚/本）</span>
+          <%= f.label :在庫数, class: "confirm_label mt-1" %>
+          <div class="quantity_input">
+            <%= f.text_field :stock_quantity, readonly: true, class: "form-control quantity text-right" %>
+            <span class="mt-1">（個/袋/枚/本）</span>
+          </div>
         </div>
 
-        <div class="d-flex mb-3 mr-5">
-          <%= f.label :メモ, class: "label text-center" %>
+        <div class="input_form mb-5">
+          <%= f.label :メモ, class: "confirm_label" %>
           <%= f.text_area :memo, readonly: true, class: "form-control mr-5" %>
         </div>
       <% end %>
