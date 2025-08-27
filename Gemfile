@@ -20,7 +20,7 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
-gem 'sorcery','0.16.3'
+gem 'sorcery','0.17.0'
 
 gem 'ransack'
 
